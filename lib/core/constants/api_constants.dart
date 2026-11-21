@@ -3,4 +3,5 @@ class ApiConstants {
       'https://crud.devjahidhasan.com/api/v1';
 
   static const String tasks = '/tasks';
+  static const String products ='/products';
 }
