@@ -1,9 +1,7 @@
-
-
 import 'package:todo_crud/features/products/domain/entities/products.dart';
 
-class ProductsModel extends Product {
-  const ProductsModel({
+class ProductModel extends Product {
+  const ProductModel({
     required super.id,
     required super.name,
     required super.price,
@@ -13,13 +11,13 @@ class ProductsModel extends Product {
     super.updatedAt,
   });
 
-  factory ProductsModel.fromJson(Map<String, dynamic> json) {
-    return ProductsModel(
-      id: json['_id'] ?? '',
-      name: json['name'] ?? '',
-      price: json['price'] ?? '',
-      stock: json['stock'] ?? '',
-      image: json['image'] ?? '',
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
+    return ProductModel(
+      id: json['_id']?.toString() ?? '',
+      name: json['name']?.toString() ?? '',
+      price: (json['price'] as num?)?.toDouble() ?? 0.0,
+      stock: (json['stock'] as num?)?.toInt() ?? 0,
+      image: json['image']?.toString() ?? '',
       createdAt: json['createdAt'] == null
           ? null
           : DateTime.tryParse(json['createdAt']),
@@ -35,6 +33,7 @@ class ProductsModel extends Product {
       'name': name,
       'price': price,
       'stock': stock,
+      'image': image,
       'createdAt': createdAt?.toIso8601String(),
       'updatedAt': updatedAt?.toIso8601String(),
     };

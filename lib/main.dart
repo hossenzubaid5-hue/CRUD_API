@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todo_crud/features/products/presentation/bindings/products_bindings.dart';
+import 'package:todo_crud/features/products/presentation/pages/products_page.dart';
 
 import 'features/tasks/presentation/pages/task_page.dart';
 import 'features/tasks/presentation/bindings/task_binding.dart';
@@ -18,14 +20,11 @@ class MyApp extends StatelessWidget {
 
       title: 'Task CRUD',
 
-      theme: ThemeData(
-        colorSchemeSeed: Colors.blue,
-        useMaterial3: true,
-      ),
+      theme: ThemeData(colorSchemeSeed: Colors.blue, useMaterial3: true),
 
-      initialBinding: TaskBinding(),
+      initialBinding: ProductBinding(),
 
-      home: const TaskPage(),
+      home: const ProductPage(),
     );
   }
 }

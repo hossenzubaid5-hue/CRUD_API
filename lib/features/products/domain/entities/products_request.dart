@@ -1,15 +1,8 @@
-import 'package:flutter/material.dart';
+class ProductRequest {
+  final String? name;
+  final double? price;
+  final int? stock;
+  final String? imagePath;
 
-class ProductsRequest {
-  final String name;
-  final double price;
-  final int stock;
-  final Image image;
-
-  const ProductsRequest({
-    required this.name,
-    required this.price,
-    required this.stock,
-    required this.image,
-  });
+  const ProductRequest({this.name, this.price, this.stock, this.imagePath});
 }

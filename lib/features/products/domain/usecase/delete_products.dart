@@ -1,9 +1,12 @@
-class CreateTask {
+import 'package:todo_crud/features/products/domain/entities/products.dart';
+import 'package:todo_crud/features/products/domain/repositories/product_repository.dart';
+
+class DeleteProduct {
   final ProductRepository repository;
 
-  CreateTask(this.repository);
+  DeleteProduct(this.repository);
 
-  Future<Product> call(ProductsRequest request) {
-    return repository.createProduct(request);
+  Future<Product> call(String id) {
+    return repository.deleteProduct(id);
   }
 }
